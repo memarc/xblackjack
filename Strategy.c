@@ -1,5 +1,5 @@
 /*
- * $Header: Strategy.c,v 1.11 92/09/23 11:00:11 kirke Locked $
+ * $Header: /usr/people/kirke/src/xblackjack/RCS/Strategy.c,v 1.12 1993/06/18 17:15:05 kirke Exp kirke $
  *
  * xblackjack -- Strategy tables logic
  *
@@ -28,7 +28,10 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-/* $Log:	Strategy.c,v $
+/* $Log: Strategy.c,v $
+ * Revision 1.12  1993/06/18  17:15:05  kirke
+ * *** empty log message ***
+ *
  * Revision 1.11  92/09/23  11:00:11  kirke
  * Added 2 messages to ManageSoftDialog().  This change contributed by
  * Anthony Daniel <tony@sequent.com>.

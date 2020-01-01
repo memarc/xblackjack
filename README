@@ -30,11 +30,26 @@ to install:
 
 	make install install.man
 
-This version includes changes from GUX (Guy Renard) grenard@elrond.stg.trw.com,
-which make placing a bet under OLIT easier.  I
-allows you to vary the number of decks and starting bankroll
-through resources (see XBlackjack.ad).  It's hardcoded to play Reno rules;
-you can double down on 10 or 11 only, and dealer hits soft 17.
+Please direct comments, suggestions, and patches to kirke@sgi.com.
+
+Note, if you attempt the build under OPENWIN with X11R5 and get:
+
+	ld.so: Undefined symbol: _XtQString
+or
+	ld: Undefined symbol
+	   _XtQString
+	   _XtQFontStruct
+	   _XtQFont
+	   _XtQInt
+	   _XtQBoolean
+	   _XrmCompileResourceList
+	Compilation failed
+
+This is a release version problem.  These functions have had their names
+changed from R4 to R5.  If you see this error, you are probably using
+R5 for everything but Xol because the OLIT routines call these Xt
+routines.  You need to compile under R4 or wait untill Xol catches up
+to R5.
 
 In addition to incorporating the patches that appeared on export:
 
@@ -54,8 +69,3 @@ fixed in this version.
 Alain Brossard (brossard@siisun.epfl.ch) caught an XtAddCallback in
 AddCallbacks() that needed an additional NULL argument (client_data) to
 compile using gcc on a sun4.
-
-Please direct comments, suggestions, and patches to:
----------------------   o  ---------------------------------------------
-Kirk Erickson         <(        Silicon Graphics Inc., Mountain View, CA
-kirke@sgi.com          [\.                               uunet!sgi!kirke

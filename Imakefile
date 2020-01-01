@@ -1,5 +1,5 @@
 /*
- * $Header: Imakefile,v 1.47 92/09/23 12:14:47 kirke Locked $
+ * $Header: /usr/people/kirke/src/xblackjack/RCS/Imakefile,v 1.48 1993/06/18 17:15:05 kirke Exp kirke $
  *
  * xblackjack -- Machine independent makefile
  *
@@ -26,7 +26,7 @@
  */
 
      MAJORVERSION = 2
-     MINORVERSION = 1
+     MINORVERSION = 2
           VERSION = $(MAJORVERSION).$(MINORVERSION)
               PGM = xblackjack
             CLASS = XBlackjack
@@ -103,8 +103,6 @@
                 $(CLASS).MOTIF \
                 $(CLASS).OLIT \
                 $(PGM).man \
-		go go.4 go.all go.dbx \
-		NOTES \
                 README
 
 ComplexProgramTarget($(PGM))

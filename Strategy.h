@@ -1,5 +1,5 @@
 /*
- * $Header: Strategy.h,v 1.6 92/08/09 23:00:56 kirke Locked $
+ * $Header: /usr/people/kirke/src/xblackjack/RCS/Strategy.h,v 1.7 1993/06/18 17:15:05 kirke Exp kirke $
  *
  * xblackjack -- "Complete Point-Count System" strategy table interface
  *
@@ -24,7 +24,10 @@
  * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  *
- * $Log:	Strategy.h,v $
+ * $Log: Strategy.h,v $
+ * Revision 1.7  1993/06/18  17:15:05  kirke
+ * *** empty log message ***
+ *
  * Revision 1.6  92/08/09  23:00:56  kirke
  * Changes for OLIT support from GUX (Guy Renard) grenard@elrond.stg.trw.com
  * 

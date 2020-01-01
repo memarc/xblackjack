@@ -1,5 +1,5 @@
 /*
- * $Header: Table.h,v 1.1 92/07/06 00:34:51 kirke Locked $
+ * $Header: /usr/people/kirke/src/xblackjack/RCS/Table.h,v 1.1 1992/07/06 00:34:51 kirk Exp $
  *
  * Table - Forms-based composite widget/geometry manager for the X Toolkit
  *

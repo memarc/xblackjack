@@ -1,5 +1,5 @@
 /*
- * $Header: Choice.h,v 1.3 92/08/09 18:32:37 kirke Locked $
+ * $Header: /usr/people/kirke/src/xblackjack/RCS/Choice.h,v 1.4 1993/06/18 17:15:05 kirke Exp kirke $
  *
  * xblackjack -- Choice bit values
  *
@@ -24,7 +24,10 @@
  * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  *
- * $Log:	Choice.h,v $
+ * $Log: Choice.h,v $
+ * Revision 1.4  1993/06/18  17:15:05  kirke
+ * *** empty log message ***
+ *
  * Revision 1.3  92/08/09  18:32:37  kirke
  * Replaced copyright notice (to include Silicon Graphics, Inc).
  * 

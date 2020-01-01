@@ -1,5 +1,5 @@
 /*
- * $Header: Card.c,v 1.10 92/09/23 10:57:01 kirke Locked $
+ * $Header: /usr/people/kirke/src/xblackjack/RCS/Card.c,v 1.11 1993/06/18 17:15:05 kirke Exp kirke $
  *
  * xblackjack -- Card management routines.
  *
@@ -25,7 +25,10 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-/* $Log:	Card.c,v $
+/* $Log: Card.c,v $
+ * Revision 1.11  1993/06/18  17:15:05  kirke
+ * *** empty log message ***
+ *
  * Revision 1.10  92/09/23  10:57:01  kirke
  * Fixed lint errors.  Statics suit_char and name_char only needed under DEBUG.
  * 

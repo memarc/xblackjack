@@ -1,5 +1,5 @@
 /*
- * $Header: TableP.h,v 1.1 92/07/06 00:35:17 kirke Locked $
+ * $Header: /usr/people/kirke/src/xblackjack/RCS/TableP.h,v 1.1 1992/07/06 00:35:17 kirk Exp $
  *
  * Table - Forms-based composite widget/geometry manager for the X Toolkit
  *

@@ -1,5 +1,5 @@
 /*
- * $Header: Assert.h,v 1.3 92/08/09 18:32:29 kirke Locked $
+ * $Header: /usr/people/kirke/src/xblackjack/RCS/Assert.h,v 1.4 1993/06/18 17:15:05 kirke Exp kirke $
  *
  * xblackjack -- Asset macro
  *
@@ -24,7 +24,10 @@
  * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  *
- * $Log:	Assert.h,v $
+ * $Log: Assert.h,v $
+ * Revision 1.4  1993/06/18  17:15:05  kirke
+ * *** empty log message ***
+ *
  * Revision 1.3  92/08/09  18:32:29  kirke
  * Replaced copyright notice (to include Silicon Graphics, Inc).
  * 

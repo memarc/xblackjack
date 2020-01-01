@@ -1,5 +1,5 @@
 /*
- * $Header: Bitmaps.h,v 1.4 92/09/23 11:01:06 kirke Locked $
+ * $Header: /usr/people/kirke/src/xblackjack/RCS/Bitmaps.h,v 1.5 1993/06/18 17:15:05 kirke Exp kirke $
  *
  * xblackjack -- Card bitmaps (from Spider)
  *
@@ -26,7 +26,10 @@
  * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  *
- * $Log:	Bitmaps.h,v $
+ * $Log: Bitmaps.h,v $
+ * Revision 1.5  1993/06/18  17:15:05  kirke
+ * *** empty log message ***
+ *
  * Revision 1.4  92/09/23  11:01:06  kirke
  * Removed extraneous static variables spider_bits and card_bits
  * (to fix lint warnings).

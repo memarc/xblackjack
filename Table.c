@@ -1,5 +1,5 @@
 /*
- * $Header: Table.c,v 1.5 92/09/23 11:00:40 kirke Locked $
+ * $Header: /usr/people/kirke/src/xblackjack/RCS/Table.c,v 1.6 1993/06/18 17:15:05 kirke Exp kirke $
  *
  * Table - Forms-based composite widget/geometry manager for the X Toolkit
  *
@@ -10,7 +10,10 @@
  * This file contains the implementation for the Table widget.
  */
 
-/* $Log:	Table.c,v $
+/* $Log: Table.c,v $
+ * Revision 1.6  1993/06/18  17:15:05  kirke
+ * *** empty log message ***
+ *
  * Revision 1.5  92/09/23  11:00:40  kirke
  * Jeffrey Siegal (jbs@congruent.com) pointed out:  The extern declarations
  * of strchr() should be removed.  It is defined in system header files
@@ -450,7 +453,11 @@ TableLocPtr locp;		/* Widget location information     */
 	tbl->a_layout += tbl->a_layout;
 	tbl->locs = (TableLocEntryPtr)
 	  XtRealloc((unsigned char *)tbl->locs,
+#if 1
 			tbl->a_layout * sizeof(TableLocEntry));
+#else
+			tbl->a_layout * (sizeof(Widget)+sizeof(TableLoc));
+#endif
     }
     tbl->locs[tbl->n_layout].w = w;
     tbl->locs[tbl->n_layout].loc = *locp;
@@ -959,7 +966,11 @@ XtTblMask opt;			/* Justification options */
 #endif
     
 /*    XtMoveWidget(w, rx, ry);*/
+#if 1
     _XmMoveObject((RectObj) w, rx, ry);
+#else
+    _XmMoveObject( w, rx, ry);
+#endif
 }
 
 
@@ -1003,10 +1014,11 @@ Dimension rs, cs;		/* Row and column interspace         */
 	    /* Resize widget */
 #ifdef sizing
 	    Widget w = managed->locs[i].w;
-	    printf("Resizing %s(%X) -> %d, %d, %d\n", (XtIsWidget(w)?w->core.name:
-						       XrmQuarkToString(w->core.xrm_name)),
-		   w, nw, nh,
-		   w->core.border_width);
+	    printf("Resizing %s(%X) -> %d, %d, %d\n",
+		(XtIsWidget(w) ? w->core.name:
+		XrmQuarkToString(w->core.xrm_name)),
+		w, nw, nh,
+		w->core.border_width);
 #endif
 	    _XmResizeObject((RectObj) managed->locs[i].w, nw, nh,
 			    managed->locs[i].w->core.border_width);

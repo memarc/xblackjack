@@ -1,5 +1,5 @@
 .\" 
-.\" $Header: xblackjack.man,v 1.7 92/08/12 23:34:46 kirke Locked $
+.\" $Header: /usr/people/kirke/src/xblackjack/RCS/xblackjack.man,v 1.8 1993/06/18 17:15:05 kirke Exp kirke $
 .\"
 .\" xblackjack -- the game of blackjack
 .\"
@@ -100,9 +100,12 @@ the slider there immediately, or click on the message pushbutton.
 .SH EXAMPLES
 xblackjack
 .SH AUTHORS
-Kirk Erickson (kirk@sgi.com)
+Kirk Erickson (kirke@sgi.com)
 .br
-Guy Renard (grenard@elrond.stg.trw.com)
+
+OLIT support contributed by:
+.br
+	Guy Renard (grenard@elrond.stg.trw.com)
 
 Cards courtesy of the folks that built Spider:
 .br
@@ -113,8 +116,7 @@ Cards courtesy of the folks that built Spider:
 	Don Woods (woods@sun.com)
 
 .SH CAVEATS
-Single deck, Reno rules.  You can double down on 10 or 11 only.
-Dealer hits soft 17.
+You can double down on 10 or 11 only.  Dealer hits soft 17.
 
 .SH KEYWORDS
   blackjack, twenty-one, van-john, pontoon, Ein-und-Zwanzig

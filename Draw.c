@@ -1,5 +1,5 @@
 /*
- * $Header: Draw.c,v 1.11 92/09/23 10:58:28 kirke Locked $
+ * $Header: /usr/people/kirke/src/xblackjack/RCS/Draw.c,v 1.12 1993/06/18 17:15:05 kirke Exp kirke $
  *
  * xblackjack -- Card drawing routines (from Spider)
  *
@@ -28,7 +28,10 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-/* $Log:	Draw.c,v $
+/* $Log: Draw.c,v $
+ * Revision 1.12  1993/06/18  17:15:05  kirke
+ * *** empty log message ***
+ *
  * Revision 1.11  92/09/23  10:58:28  kirke
  * Fixed lint errors.  Extraneous var defs in draw_int, card_x() and face_down().
  * Removed unused cliprects static.

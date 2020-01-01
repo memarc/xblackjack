@@ -1,5 +1,5 @@
 /*
- * $Header: Main.c,v 1.19 92/09/24 11:03:08 kirke Locked $
+ * $Header: /usr/people/kirke/src/xblackjack/RCS/Main.c,v 1.20 1993/06/18 17:15:05 kirke Exp kirke $
  *
  * xblackjack -- The game of Blackjack
  *
@@ -25,7 +25,10 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-/* $Log:	Main.c,v $
+/* $Log: Main.c,v $
+ * Revision 1.20  1993/06/18  17:15:05  kirke
+ * *** empty log message ***
+ *
  * Revision 1.19  92/09/24  11:03:08  kirke
  * Reverted back to original main() arg declaration sequence.  Had attempted
  * to alleviate warning compiling under IRIX, but then failed on the Sun.
@@ -2849,7 +2852,8 @@ CreateMotifWidgets()
 	QuitCascadeButton = XmCreateCascadeButton(FilePulldownMenu,
 				"QuitCascadeButton", NULL, 0);
 	XtManageChild(QuitCascadeButton);
-	XtAddCallback(QuitCascadeButton, XmNactivateCallback, exit, NULL);
+	XtAddCallback(QuitCascadeButton, XmNactivateCallback,
+			(XtCallbackProc) exit, NULL);
 
 	HelpCascadeButton = XmCreateCascadeButton(MenuBar,
 				"HelpCascadeButton", NULL, 0);
