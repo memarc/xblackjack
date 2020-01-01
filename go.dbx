@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+#  Run under the debugger.
+#
+make
+(cd; xrdb -load .xresources)
+xrdb -merge XBlackjack.ad
+dbx xblackjack

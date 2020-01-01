@@ -1,0 +1,170 @@
+/*
+ * $Header: Imakefile,v 1.47 92/09/23 12:14:47 kirke Locked $
+ *
+ * xblackjack -- Machine independent makefile
+ *
+ * (c) Copyright 1992, Kirk Erickson and Silicon Graphics Inc.
+ *
+ * Permission to use, copy, modify, distribute, and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear in
+ * supporting documentation, and that the name of Kirk Erickson and
+ * Silicon Graphics Inc. not be used in advertising or publicity pertaining
+ * to distribution of the software without specific, written prior
+ * permission.  Kirk Erickson and Silicon Graphics Inc. make no
+ * representations about the suitability of this software for any purpose.
+ * It is provided "as is" without express or implied warranty.
+ *
+ * THE ABOVE-NAMED DISCLAIM ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+ * INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO
+ * EVENT SHALL THE ABOVE-NAMED BE LIABLE FOR ANY SPECIAL, INDIRECT OR
+ * CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF
+ * USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+
+     MAJORVERSION = 2
+     MINORVERSION = 1
+          VERSION = $(MAJORVERSION).$(MINORVERSION)
+              PGM = xblackjack
+            CLASS = XBlackjack
+              DIR = $(PGM)-$(VERSION)
+
+/*
+ *  If the default install targets aren't appropriate, change NO to YES,
+ *  and edit the targets to what you want.
+ */
+#define NonStandardInstallTargets NO
+#if NonStandardInstallTargets
+           BINDIR = /usr/local/bin
+           MANDIR = /usr/local/man/cat1
+      XAPPLOADDIR = /usr/local/lib/app-defaults
+#endif
+
+/*
+ *  If you have Open Look and not Motif, change NO to YES.
+ */
+#define UseOpenLookToolkit NO
+#if UseOpenLookToolkit
+      STD_DEFINES = -DOLIT
+  EXTRA_LIBRARIES = -lXol -lXmu -lXt -lX11
+#else
+/*
+ *  You may need to remove -lbsd.
+ */
+  EXTRA_LIBRARIES = -lXm $(DEPLIBS) -lbsd
+#endif
+
+/*
+ *  To synchronize, activate asserts, and compile for debugging.
+ *  Take your default OPTIM line from Makefile, and change the -O to -g.
+ */
+#define TurnOnDebugging NO
+#if TurnOnDebugging 
+      CDEBUGFLAGS = -g
+          DEFINES = -DDEBUG -DVERSION="\"$(VERSION)\""
+#else
+          DEFINES = -DVERSION="\"$(VERSION)\""
+#endif
+
+/* You shouldn't need to modify anything below this line */
+
+          HEADERS = \
+		Assert.h \
+                Bitmaps.h \
+                Card.h \
+                Choice.h \
+                Draw.h \
+                Icon.h \
+                Motif2OLIT.h \
+                PatchLevel.h \
+                Strategy.h \
+		Table.h \
+		TableP.h
+
+             SRCS = \
+                Card.c \
+                Draw.c \
+                Main.c \
+                Strategy.c \
+                Table.c
+
+              OBJS = \
+                Card.o \
+                Draw.o \
+                Main.o \
+                Strategy.o \
+		Table.o
+
+            OTHERS = \
+                Imakefile \
+                $(CLASS).MOTIF \
+                $(CLASS).OLIT \
+                $(PGM).man \
+		go go.4 go.all go.dbx \
+		NOTES \
+                README
+
+ComplexProgramTarget($(PGM))
+InstallAppDefaults($(CLASS))
+
+World:
+	@echo ""
+	@echo "Building Version "$(VERSION)" of xblackjack"
+	@echo ""
+	@echo "######################################"
+	@echo "# First set parameters in Imakefile. #"
+	@echo "######################################"
+	@echo ""
+	@date
+	@echo ""
+	$(MAKE) $(MFLAGS) Makefile
+	$(MAKE) $(MFLAGS) clean
+	$(MAKE) $(MFLAGS) includes
+	$(MAKE) $(MFLAGS) depend
+	$(MAKE) $(MFLAGS) all
+	@echo ""
+	@echo "##################################"
+	@echo "# Load resources before running: #"
+	@echo "#    xrdb -merge XBlackjack.ad   #"
+	@echo "#    xblackjack                  #"
+	@echo "##################################"
+	@echo ""
+
+#if UseOpenLookToolkit
+all::
+	rm -f XBlackjack.ad
+	ln -s XBlackjack.OLIT XBlackjack.ad
+#else
+all::
+	rm -f XBlackjack.ad
+	ln -s XBlackjack.MOTIF XBlackjack.ad
+#endif
+
+tar: $(DIR).tar.Z
+
+$(DIR).tar.Z: $(HEADERS) $(SRCS) $(OTHERS)
+	mkdir $(DIR)
+	cp $(HEADERS) $(SRCS) $(OTHERS) $(DIR)
+	tar cvf $(DIR).tar $(DIR)
+	compress $(DIR).tar
+
+clean::
+	rm -f 1.log 2.log 3.log 4.log
+
+
+#if NonStandardInstallTargets
+release:
+	@echo "Set NonStandardInstallTargets to NO in Imakefile first."
+#else
+#if TurnOnDebugging
+release:
+	@echo "Set TurnOnDebugging to NO in Imakefile first."
+#else
+release:
+	ci -l -q $(SRCS) $(HEADERS) $(OTHERS);
+	$(MAKE) $(MFLAGS) Makefile clean tags World tar;
+#endif
+#endif

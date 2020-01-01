@@ -1,0 +1,531 @@
+!
+! $Header: XBlackjack.OLIT,v 1.4 92/09/24 11:08:14 kirke Locked $
+!
+! xblackjack -- application defaults 
+!
+! (c) Copyright 1992, Kirk Erickson
+!
+! Permission to use, copy, modify, distribute, and sell this software and
+! its documentation for any purpose is hereby granted without fee, provided
+! that the above copyright notice appear in all copies and that both that
+! copyright notice and this permission notice appear in supporting
+! documentation, and that the name of Kirk Erickson not be used in
+! advertising or publicity pertaining to distribution of the software
+! without specific, written prior permission.  Kirk Erickson makes no
+! representations about the suitability of this software for any purpose.
+! It is provided "as is" without express or implied warranty.
+!
+! THE ABOVE-NAMED DISCLAIM ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+! INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO
+! EVENT SHALL THE ABOVE-NAMED BE LIABLE FOR ANY SPECIAL, INDIRECT OR
+! CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF
+! USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+! OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+! PERFORMANCE OF THIS SOFTWARE.
+!
+XBlackjack.adjustBetUnit: 1
+XBlackjack.betUnit: 1
+XBlackjack.bankroll: 200
+XBlackjack.decks: 1
+
+XBlackjack.title: xblackjack
+XBlackjack.geometry: +130+65
+XBlackjack.width: 750
+XBlackjack.height: 400
+#define DIALOG_X 468
+#define DIALOG_Y 142
+#define HELP_X 328
+#define HELP_Y DIALOG_Y
+#define STRATEGY_DIALOG_X 600
+#define STRATEGY_DIALOG_Y DIALOG_Y
+#define HELP_FONT 9x15
+
+XBlackjack*background: #cc9500
+
+XBlackjack*font: -adobe-helvetica-bold-r-normal--18-*-iso8859-1
+
+XBlackjack*MainTable.orientation: horizontal
+
+XBlackjack*StatusPushButton.label: Thank-you for coming
+XBlackjack*StatusPushButton.width: 700
+XBlackjack*StatusPushButton.height: 25
+XBlackjack*StatusPushButton.recomputeSize: false
+
+XBlackjack*FileCascadeButton.label: file
+XBlackjack*QuitCascadeButton.label: quit
+XBlackjack*HelpCascadeButton.label: help
+
+XBlackjack*HelpGeneralPushButton.label: general
+XBlackjack*HelpGeneralDialog.title: General Help
+XBlackjack*HelpGeneralDialog.defaultPosition: False
+XBlackjack*HelpGeneralDialog.x: 328
+XBlackjack*HelpGeneralDialog.y: 142
+XBlackjack*HelpGeneralDialog.pushpin: in
+XBlackjack*HelpGeneralScrolledText.linesVisible: 22
+XBlackjack*HelpGeneralScrolledText.charsVisible: 76
+XBlackjack*HelpGeneralScrolledText.font: 9x15
+XBlackjack*HelpGeneralScrolledText.editType: textread
+XBlackjack*HelpGeneralScrolledText.wrapMode: wrapwhitespace
+XBlackjack*HelpGeneralScrolledText.leftMargin: 8
+XBlackjack*HelpGeneralTable.forceHorizontalSB: False
+XBlackjack*HelpGeneralScrolledText.source: \
+\n\
+   All selections are made using the LEFT mouse button.\n\
+\n\
+   Place a bet using the scale labelled "your bet".  You can drag the\n\
+   slider to adjust your bet, and release the button when the value\n\
+   above the slider is appropriate.  If you're happy with the initial\n\
+   value, just click on the slider.\n\
+\n\
+   Subsequently, select your choice by clicking on one of the buttons\n\
+   above the betting area (split, double down, hit, or stand).\n\
+\n\
+   The program uses a strategy to suggest an appropriate bet and make\n\
+   default selections.  You can test the strategy using the slider to\n\
+   the right of the card area to control AUTOPLAY mode.\n\
+\n\
+   Click the message pushbutton below the card area to reveal the\n\
+   strategy.  The "high-low" INDEX calculation used by the strategy is\n\
+   revealed in the middle of the card area.  If your making a choice,\n\
+   the table corresponding to the best choice is shown too.  Press again\n\
+   to cycle through the strategy tables corresonding to other possible\n\
+   choices (if any).\n\
+
+XBlackjack*HelpRulesPushButton.label: rules
+XBlackjack*HelpRulesDialog.title: Help on Rules
+XBlackjack*HelpRulesDialog.defaultPosition: False
+XBlackjack*HelpRulesDialog.x: 328
+XBlackjack*HelpRulesDialog.y: 142
+XBlackjack*HelpRulesDialog.pushpin: in
+XBlackjack*HelpRulesScrolledText.linesVisible: 24
+XBlackjack*HelpRulesScrolledText.charsVisible: 76
+XBlackjack*HelpRulesScrolledText.font: 9x15
+XBlackjack*HelpRulesScrolledText.editType: textread
+XBlackjack*HelpRulesScrolledText.wrapMode: wrapwhitespace
+XBlackjack*HelpRulesScrolledText.leftMargin: 8
+XBlackjack*HelpRulesTable.forceHorizontalSB: False
+XBlackjack*HelpRulesScrolledText.source: \
+\n\
+   From Harrah's Reno Gaming Guide:\n\
+\n\
+   The dealer starts the game.  Two cards are dealt to each player face\n\
+   down; the dealer's first card faces up, the second faces down.\n\
+\n\
+   The object of the game is to draw cards that total 21 or come closer\n\
+   to 21 than those held by the dealer.  The King, Queen, and Jack count\n\
+   10; the other cards count at their face value except the Ace which\n\
+   counts 1 or 11 as you decide.\n\
+\n\
+   An Ace with any 10, Jack, Queen, or King is a BLACKJACK.  Turn this\n\
+   hand over immediately and the dealer will pay one-and-a-half times\n\
+   your bet unless the dealer also has a BLACKJACK, in which case it is\n\
+   a PUSH... neither wins.\n\
+\n\
+   When the dealer has an Ace up, you have the option of taking INSURANCE\n\
+   (in any amount up to one-half the original bet) against her having\n\
+   a BLACKJACK.  If the dealer has a BLACKJACK, the INSURANCE is paid\n\
+   two to one.  If the dealer doesn't have BLACKJACK, she takes your\n\
+   INSURANCE bet and the game continues.\n\
+\n\
+   If you don't have a BLACKJACK, you may ask the dealer to HIT you,\n\
+   that is, give you another card.  You may draw as many cards as you\n\
+   like (one at a time), but if you go over 21, you go BROKE and lose.\n\
+   You must turn your cards face up on the table immediately.  If you\n\
+   do not want to HIT, you may STAND by placing your cards face down\n\
+   under your bet.\n\
+\n\
+   After all players are satisfied with their hands or have gone BROKE,\n\
+   the dealer turns her down card face up and STANDs or DRAWs more cards\n\
+   as is necessary.  The dealer must draw to any total up to and including\n\
+   16, and stand on 17, except soft 17.  A soft 17 is any combination of\n\
+   cards containing an ace, but not a ten, that totals 7 or 17.  (Example:\n\
+   Ace,6; Ace,4,2; Ace,5,Ace; etc.).  The dealer must DRAW when having\n\
+   soft 17.\n\
+\n\
+   BLACKJACK            Formerly any black Ace with a black Jack.  Now\n\
+                        the Blackjack feature of the game includes any\n\
+                        Ace with 10, Jack, Queen, or King; two cards\n\
+                        totaling 21.\n\
+\n\
+   BROKE or BUST        When you draw cards that add up to 22 or more.\n\
+\n\
+   DOUBLING DOWN        If you are dealt a 10 or 11, and think you can\n\
+                        win with only one more card, turn both cards face\n\
+                        up and double your bet.  You will then be dealt\n\
+                        one more card, face down.\n\
+\n\
+   EVEN MONEY           If a player has a BLACKJACK and the dealer has\n\
+                        an Ace up, the player may request EVEN MONEY in\n\
+                        lieu of insurace prior to the dealer checking\n\
+                        his hole card.  The player forfeits the chance\n\
+                        to be paid one-and-a-half time the bet if the\n\
+                        dealer does not have a 21 also, but avoids the\n\
+                        push and gets paid even money if the dealer does\n\
+                        have a 21.\n\
+\n\
+   HIT or DRAW          Signify that you wish another card by holding\n\
+                        your two orignal cards in your hand and making a\n\
+                        slight movement with your cards toward you.\n\
+\n\
+   INSURANCE            If the dealer's "up card" is an Ace, you can take\n\
+                        insurance.  Here your betting that the dealer has\n\
+                        a ten value card in the hole.  You can bet only\n\
+                        one-half your original bet.  If the dealer does\n\
+                        have BLACKJACK, your original bet loses and the\n\
+                        INSURANCE is paid two to one.  If the dealer does\n\
+                        not have a BLACKJACK, he takes the insurance bet\n\
+                        and the game continues.\n\
+\n\
+   SPLITTING PAIRS      An option you have with two cards of the same\n\
+                        denomination (4's, 7's, etc.).  You may SPLIT the\n\
+                        pair into two separate hands, and play each hand\n\
+                        individually.  You must wager the same amount as\n\
+                        your original bet on the split hand.  If you split\n\
+                        Aces, you get only one HIT on each Ace.\n\
+\n\
+   STAND                You wish no more cards.  Simply place your two\n\
+                        original cards under your bet face down.  If the\n\
+                        dealer hits your hand, leave your "hit cards" face\n\
+                        up on the table.\n\
+\n\
+   PUSH                 You have the same count as the dealer.  Neither\n\
+                        wins.\n\
+\n\
+   STIFF                Any combination of cards with which you can go\n\
+                        BROKE by addition of one more card.\n\
+\n\
+   STAND PAT            A hand that you do not wish to hit, usually a\n\
+                        hand with total count from 17 thru 21.\n\
+
+XBlackjack*HelpBasicStrategyPushButton.label: basic strategy
+XBlackjack*HelpBasicStrategyDialog.title: Help on Basic Strategy
+XBlackjack*HelpBasicStrategyDialog.x: 328
+XBlackjack*HelpBasicStrategyDialog.y: 142
+XBlackjack*HelpBasicStrategyDialog.pushpin: in
+XBlackjack*HelpBasicStrategyScrolledText.linesVisible: 26
+XBlackjack*HelpBasicStrategyScrolledText.charsVisible: 76
+XBlackjack*HelpBasicStrategyScrolledText.font: 9x15
+XBlackjack*HelpBasicStrategyScrolledText.editType: textread
+XBlackjack*HelpBasicStrategyScrolledText.wrapMode: wrapwhitespace
+XBlackjack*HelpBasicStrategyScrolledText.leftMargin: 8
+XBlackjack*HelpBasicStrategyTable.forceHorizontalSB: False
+XBlackjack*HelpBasicStrategyScrolledText.source: \
+\n\
+   You can make your odds nearly even with the house without counting\n\
+   cards using the following strategy.  If you are dealt a pair, decide\n\
+   whether or not to split first, then whether or not to double down, and\n\
+   finally if you should stand.\n\
+\n\
+     Stand at hard 12 against 4,5,6\n\
+     Stand at hard 13 against 2,3\n\
+     Stand at hard 16 against 10 if you hold 3 or more cards\n\
+     Stand at hard 17 against 7,8,9,10,A\n\
+     -------------------------------------------------------\n\
+     Stand at soft 18 against 2,3,4,5,6,7,8,A\n\
+     Stand at soft 19 against 9,10\n\
+     -------------------------------------------------------\n\
+     Always double down 11\n\
+     Double down 10 except against 10,A\n\
+     -------------------------------------------------------\n\
+     Always split Aces and Eights. Never split tens or fives\n\
+     Split nines against 2,3,4,5,6,8,9\n\
+     Split sevens against 2,3,4,5,6,7,8\n\
+     Split twos, threes, and sixes against 2,3,4,5,6,7\n\
+     Only split fours against 5\n\
+\n\
+   Your hand is SOFT if it contains an ace which you can count as 11\n\
+   without causing the total to exceed 21, otherwise its HARD.\n\
+
+XBlackjack*HelpCountingPushButton.label: counting
+XBlackjack*HelpCountingDialog.title: Help on Counting
+XBlackjack*HelpCountingDialog.x: 328
+XBlackjack*HelpCountingDialog.y: 142
+XBlackjack*HelpCountingDialog.pushpin: in
+XBlackjack*HelpCountingScrolledText.linesVisible: 25
+XBlackjack*HelpCountingScrolledText.charsVisible: 76
+XBlackjack*HelpCountingScrolledText.font: 9x15
+XBlackjack*HelpCountingScrolledText.editType: textread
+XBlackjack*HelpCountingScrolledText.wrapMode: wrapwhitespace
+XBlackjack*HelpCountingScrolledText.leftMargin: 8
+XBlackjack*HelpCountingTable.forceHorizontalSB: False
+XBlackjack*HelpCountingScrolledText.source: \
+\n\
+   Start the COUNT at zero after the shuffle.  Add one for each small card\n\
+   (2,3,4,5, or 6) seen, and subtract one from the COUNT for each big card\n\
+   (ten, face card, or Ace) seen.  The medium cards 7,8,9 have no effect.\n\
+\n\
+                   count = 0            (fresh deck)\n\
+                   count = count + 1    (a 2-6 seen)\n\
+                   count = count - 1    (10 or ace seen)\n\
+\n\
+   If you have trouble keeping up with the arithmetic, look ahead enough\n\
+   to notice when a small one can be "cancelled" with a big one.  Rather\n\
+   than adding and then subtracting, just move on.\n\
+\n\
+   As the COUNT gets more positive (the deck gets tens rich), your odds\n\
+   become favorable.  You should bet more, and then stand, split, and\n\
+   double down more often.\n\
+\n\
+   Click the message button below the card area to see the COUNT.  It's\n\
+   the first number displayed in the INDEX calculation:\n\
+\n\
+                   (count*100)/unseen\n\
+\n\
+   See "Best Strategy" for details regarding the INDEX.  It gives more\n\
+   weight to the COUNT the closer you get to the end of the deck.\n\
+
+XBlackjack*HelpBestStrategyPushButton.label: best strategy
+XBlackjack*HelpBestStrategyDialog.title: Help on Best Strategy
+XBlackjack*HelpBestStrategyDialog.x: 328
+XBlackjack*HelpBestStrategyDialog.y: 142
+XBlackjack*HelpBestStrategyDialog.pushpin: in
+XBlackjack*HelpBestStrategyScrolledText.linesVisible: 26
+XBlackjack*HelpBestStrategyScrolledText.charsVisible: 76
+XBlackjack*HelpBestStrategyScrolledText.font: 9x15
+XBlackjack*HelpBestStrategyScrolledText.editType: textread
+XBlackjack*HelpBestStrategyScrolledText.wrapMode: wrapwhitespace
+XBlackjack*HelpBestStrategyScrolledText.leftMargin: 8
+XBlackjack*HelpBestStrategyTable.forceHorizontalSB: False
+XBlackjack*HelpBestStrategyScrolledText.source: \
+\n\
+   The strategy used by the program was developed by Edward O. Thorp,\n\
+   Ph.D. (published in 'Beat the Dealer', Vintage Books 1966).\n\
+\n\
+   A COUNT of +2 or +3 in the last hand of play needs more weight than\n\
+   the same COUNT during the first hand.  Thorp's "high-low" INDEX factors\n\
+   in the number of unseen cards:\n\
+\n\
+                  index = count*100/unseen\n\
+\n\
+   Bet half the INDEX in favorable situations.  Only buy insurance when\n\
+   the INDEX is greater than 8.\n\
+\n\
+   Selections are made by comparing the current INDEX to an entry in the\n\
+   appropriate table of values:\n\
+\n\
+                   Pair Spliting\n\
+                   Doubling Down\n\
+                   Drawing or Standing with Hard Hands\n\
+                   Drawing or Standing with Soft Hands\n\
+\n\
+   Press the message button below the card area to view the table\n\
+   corresponding the best choice.  Pressing repeatedly will cycle through\n\
+   all relevant tables.  Test the strategy using the AUTOPLAY scale to\n\
+   the right of the card area.\n\
+
+XBlackjack*HelpVersionPushButton.label: version
+
+XBlackjack*WonLabel.x: 10
+XBlackjack*WonLabel.y: 10
+XBlackjack*WonLabel.string: won:
+XBlackjack*WonLabel.alignment: right
+
+XBlackjack*WonLabelValue.x: 100
+XBlackjack*WonLabelValue.y: 10
+XBlackjack*WonLabelValue.string: 000
+XBlackjack*WonLabelValue.alignment: right
+
+XBlackjack*WonLabelPercent.x: 150
+XBlackjack*WonLabelPercent.y: 10
+XBlackjack*WonLabelPercent.string: 000%
+XBlackjack*WonLabelPercent.alignment: right
+XBlackjack*WonLabelPercent.marginRight: 8
+
+XBlackjack*LostLabel.x: 10
+XBlackjack*LostLabel.y: 30
+XBlackjack*LostLabel.string: lost:
+XBlackjack*LostLabel.alignment: right
+
+XBlackjack*LostLabelValue.x: 100
+XBlackjack*LostLabelValue.y: 30
+XBlackjack*LostLabelValue.string: 000
+XBlackjack*LostLabelValue.alignment: right
+
+XBlackjack*LostLabelPercent.x: 150
+XBlackjack*LostLabelPercent.y: 30
+XBlackjack*LostLabelPercent.string: 000%
+XBlackjack*LostLabelPercent.alignment: right
+XBlackjack*LostLabelPercent.marginRight: 8
+
+XBlackjack*PushedLabel.x: 10
+XBlackjack*PushedLabel.y: 50
+XBlackjack*PushedLabel.string: pushed:
+XBlackjack*PushedLabel.alignment: right
+
+XBlackjack*PushedLabelValue.x: 100
+XBlackjack*PushedLabelValue.y: 50
+XBlackjack*PushedLabelValue.string: 000
+XBlackjack*PushedLabelValue.alignment: right
+
+XBlackjack*PushedLabelPercent.x: 150
+XBlackjack*PushedLabelPercent.y: 50
+XBlackjack*PushedLabelPercent.string: 000%
+XBlackjack*PushedLabelPercent.alignment: right
+XBlackjack*PushedLabelPercent.marginRight: 8
+
+XBlackjack*YourBetScaleValue.x: 100
+XBlackjack*YourBetScaleValue.y: 100
+XBlackjack*YourBetScaleValue.string: $1
+
+XBlackjack*YourBetScale.x: 10
+XBlackjack*YourBetScale.y: 125
+XBlackjack*YourBetScale.orientation: horizontal
+XBlackjack*YourBetScale.height: 22
+XBlackjack*YourBetScale.width: 250
+! NOTE: The following three resources should have the same value:
+XBlackjack*YourBetScale.sliderValue: 1
+XBlackjack*YourBetScale.minLabel: 1
+XBlackjack*YourBetScale.sliderMin: 1
+XBlackjack*YourBetScale.ticks: 10
+XBlackjack*YourBetScale.tickUnit: slidervalue
+
+XBlackjack*YourBetScaleTitle.x: 20
+XBlackjack*YourBetScaleTitle.y: 100
+XBlackjack*YourBetScaleTitle.string: your bet
+
+XBlackjack*DealPushButton.x: 150
+XBlackjack*DealPushButton.y: 100
+XBlackjack*DealPushButton.width: 100
+XBlackjack*DealPushButton.height: 25
+XBlackjack*DealPushButton.label: deal
+XBlackjack*DealPushButton.recomputeSize: false
+
+XBlackjack*HintPushButton.label: ?
+
+XBlackjack*YouHaveLabel.x: 10
+XBlackjack*YouHaveLabel.y: 150
+XBlackjack*YouHaveLabel.string: you have:
+XBlackjack*YouHaveLabel.alignment: right
+
+XBlackjack*YouHaveLabelValue.x: 100
+XBlackjack*YouHaveLabelValue.y: 150
+XBlackjack*YouHaveLabelValue.alignment: right
+
+XBlackjack*PlaceHolderLabel.string:
+
+XBlackjack*SplitPushButton.x: 10
+XBlackjack*SplitPushButton.y: 180
+XBlackjack*SplitPushButton.width: 250
+XBlackjack*SplitPushButton.height: 25
+XBlackjack*SplitPushButton.label: split
+XBlackjack*SplitPushButton.recomputeSize: false
+
+XBlackjack*DoublePushButton.x: 10
+XBlackjack*DoublePushButton.y: 210
+XBlackjack*DoublePushButton.width: 250
+XBlackjack*DoublePushButton.height: 25
+XBlackjack*DoublePushButton.label: double down
+XBlackjack*DoublePushButton.recomputeSize: false
+
+XBlackjack*HitPushButton.x: 10
+XBlackjack*HitPushButton.y: 240
+XBlackjack*HitPushButton.width: 250
+XBlackjack*HitPushButton.height: 25
+XBlackjack*HitPushButton.label: hit
+XBlackjack*HitPushButton.recomputeSize: false
+
+XBlackjack*StandPushButton.x: 10
+XBlackjack*StandPushButton.y: 270
+XBlackjack*StandPushButton.width: 250
+XBlackjack*StandPushButton.height: 25
+XBlackjack*StandPushButton.label: stand
+XBlackjack*StandPushButton.recomputeSize: false
+
+XBlackjack*InsuranceQuestionDialog.x: 468
+XBlackjack*InsuranceQuestionDialog.y: 142
+XBlackjack*InsuranceQuestionDialog.title: Insurance Dialog
+XBlackjack*InsuranceQuestionDialogT.string: Want Insurance?
+XBlackjack*InsuranceQuestionDialogY.label: Yes
+XBlackjack*InsuranceQuestionDialogN.label: No
+XBlackjack*InsuranceQuestionDialogH.label: Help
+
+XBlackjack*InsuranceHelpDialog.title: Help on Insurance
+XBlackjack*InsuranceHelpDialog.x: 328
+XBlackjack*InsuranceHelpDialog.y: 142
+XBlackjack*InsuranceHelpDialog.pushpin: in
+XBlackjack*InsuranceHelpScrolledText.linesVisible: 17
+XBlackjack*InsuranceHelpScrolledText.charsVisible: 76
+XBlackjack*InsuranceHelpScrolledText.font: 9x15
+XBlackjack*InsuranceHelpScrolledText.editType: textread
+XBlackjack*InsuranceHelpScrolledText.wrapMode: wrapwhitespace
+XBlackjack*InsuranceHelpScrolledText.leftMargin: 8
+XBlackjack*InsuranceHelpTable.forceHorizontalSB: False
+XBlackjack*InsuranceHelpScrolledText.source: \
+\n\
+   Harrah's Gaming Guide:\n\
+\n\
+   When the dealer's "up card" is an Ace, you can take INSURANCE.  Here\n\
+   your betting that the dealer has a ten value card in the hole.  You\n\
+   can bet only one-half your original bet.  If the dealer does have\n\
+   BLACKJACK, your original bet loses and the INSURANCE is paid two to\n\
+   one.  If the dealer does not have a BLACKJACK, she takes the INSURANCE\n\
+   bet and the game continues.\n\
+\n\
+   This is usually a bad bet, but if the situation is moderately favorable:\n\
+\n\
+                                   index > 8\n\
+\n\
+   you should buy insurance. Click the message pushbutton below the card\n\
+   area for a hint.\n\
+
+XBlackjack*PayoffSplitDialog.x: 468
+XBlackjack*PayoffSplitDialog.y: 142
+XBlackjack*PayoffSplitDialog.title: Split Payoff Dialog
+XBlackjack*PayoffSplitDialogOK.label: OK
+
+XBlackjack*ShuffleDialog.x: 468
+XBlackjack*ShuffleDialog.y: 142
+XBlackjack*ShuffleDialog.title: Shuffle Dialog
+XBlackjack*ShuffleDialogOK.label: OK
+
+XBlackjack*HardStrategyDialog.x: 600
+XBlackjack*HardStrategyDialog.y: 142
+XBlackjack*HardStrategyDialog.pushpin: in
+XBlackjack*HardStrategyDialog.Title: Drawing or Standing with Hard Hands
+
+XBlackjack*SoftStrategyDialog.x: 600
+XBlackjack*SoftStrategyDialog.y: 142
+XBlackjack*SoftStrategyDialog.pushpin: in
+XBlackjack*SoftStrategyDialog.title: Drawing or Standing with Soft Hands
+
+XBlackjack*DoubleStrategyDialog.x: 600
+XBlackjack*DoubleStrategyDialog.y: 142
+XBlackjack*DoubleStrategyDialog.pushpin: in
+XBlackjack*DoubleStrategyDialog.title: Doubling Down
+
+XBlackjack*SplitStrategyDialog.x: 600
+XBlackjack*SplitStrategyDialog.y: 142
+XBlackjack*SplitStrategyDialog.pushpin: in
+XBlackjack*SplitStrategyDialog.title: Pair Splitting 
+
+XBlackjack*DrawAreas.space: 10
+
+XBlackjack*DealerDrawingArea.x: 0
+XBlackjack*DealerDrawingArea.y: 0
+XBlackjack*DealerDrawingArea.height: 150
+XBlackjack*DealerDrawingArea.width: 400
+
+! This is between the dealer/player card DrawingAreas
+XBlackjack*HintMsgLabel.string: placeholder
+XBlackjack*HintMsgLabel.recomputeSize: False
+XBlackjack*HintMsgLabel.x: 0
+XBlackjack*HintMsgLabel.y: 150
+XBlackjack*HintMsgLabel.height: 20
+XBlackjack*HintMsgLabel.width: 400
+XBlackjack*HintMsgLabel.fontColor: white
+
+XBlackjack*PlayerDrawingArea.x: 0
+XBlackjack*PlayerDrawingArea.y: 170
+XBlackjack*PlayerDrawingArea.height: 150
+XBlackjack*PlayerDrawingArea.width: 400
+
+XBlackjack*AutoplayScale.orientation: vertical
+XBlackjack*AutoplayScale.space: 10
+XBlackjack*AutoplayScale.x: 680
+XBlackjack*AutoplayScale.y: 0
+XBlackjack*AutoplayScale.width: 60
+XBlackjack*AutoplayScale.height: 320
+! min is hardcoded at 50 milliseconds, you control the max (slowest speed)
+XBlackjack*AutoplayScale.maxLabel: 2000
+XBlackjack*AutoplayScale.sliderMax: 2000
+
